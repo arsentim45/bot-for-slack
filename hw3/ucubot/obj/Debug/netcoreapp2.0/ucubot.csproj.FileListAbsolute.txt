@@ -19,14 +19,3 @@
 /home/arsen/Desktop/mybd/databases/dbHW2-learning/ucubot/obj/Debug/netcoreapp2.0/ucubot.AssemblyInfo.cs
 /home/arsen/Desktop/mybd/databases/dbHW2-learning/ucubot/obj/Debug/netcoreapp2.0/ucubot.dll
 /home/arsen/Desktop/mybd/databases/dbHW2-learning/ucubot/obj/Debug/netcoreapp2.0/ucubot.pdb
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/bin/Debug/netcoreapp2.0/ucubot.deps.json
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/bin/Debug/netcoreapp2.0/ucubot.runtimeconfig.json
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/bin/Debug/netcoreapp2.0/ucubot.runtimeconfig.dev.json
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/bin/Debug/netcoreapp2.0/ucubot.dll
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/bin/Debug/netcoreapp2.0/ucubot.pdb
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/obj/Debug/netcoreapp2.0/ucubot.csprojAssemblyReference.cache
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/obj/Debug/netcoreapp2.0/ucubot.csproj.CoreCompileInputs.cache
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/obj/Debug/netcoreapp2.0/ucubot.AssemblyInfoInputs.cache
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/obj/Debug/netcoreapp2.0/ucubot.AssemblyInfo.cs
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/obj/Debug/netcoreapp2.0/ucubot.dll
-/home/arsen/Desktop/mybd/databases/hw3/ucubot/obj/Debug/netcoreapp2.0/ucubot.pdb

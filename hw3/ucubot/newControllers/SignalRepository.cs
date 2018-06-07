@@ -24,7 +24,7 @@ namespace ucubot.newControllers
             _configuration = configuration;
             _connection = connection;
         }
-        public IEnumerable<StudentSignal> GetAll(MySqlConnection connection)
+        public IEnumerable<StudentSignal> GetALL(MySqlConnection connection)
         {
             connection.Open();
             var value = connection

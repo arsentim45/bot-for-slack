@@ -47,8 +47,8 @@ namespace ucubot.newControllers
 
             connection.Open();
             var value = connection.Query<Student>(
-                "select id as Id, first_name as FirstName, last_name as LastName, user_id as UserId from student where id=@Id",
-                new {Id = id}).AsList();
+                "select id as Id, first_name as FirstName, last_name as LastName, user_id as UserId from student where id=@myid",
+                new {myid = id}).AsList();
             connection.Close();
             if (value.Count == 0)
             {
@@ -69,8 +69,8 @@ namespace ucubot.newControllers
             connection.Open();
             try
             {
-                connection.Execute("INSERT INTO student (first_name, last_name, user_id) VALUES (@fn, @ln, @uid)",
-                    new {fn = student.FirstName, ln = student.LastName, uid = student.UserId});
+                connection.Execute("INSERT INTO student (first_name, last_name, user_id) VALUES (@myfirstname, @mylastname, @myuser)",
+                    new {myfirstname = student.FirstName, mylastname = student.LastName, myuser = student.UserId});
             }
             catch (Exception e)
             {
@@ -93,8 +93,8 @@ namespace ucubot.newControllers
             try
             {
                 connection.Execute(
-                    "update student SET first_name = @fn, last_name = @ln, user_id = @uid where id = @id;",
-                    new {fn = student.FirstName, ln = student.LastName, uid = student.UserId, id = student.Id});
+                    "update student SET first_name = @myfirstname, last_name = @mylastname, user_id = @myuser where id = @myid;",
+                    new {myfirstname = student.FirstName, mylastname = student.LastName, myuser = student.UserId, myid = student.Id});
             }
             catch (Exception e)
             {
@@ -116,7 +116,7 @@ namespace ucubot.newControllers
 
             try
             {
-                connection.Execute("DELETE FROM student WHERE id = @id;", new {id = id});
+                connection.Execute("DELETE FROM student WHERE id = @myid;", new {myid = id});
             }
             catch (Exception e)
             {

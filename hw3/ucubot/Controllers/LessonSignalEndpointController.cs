@@ -27,7 +27,7 @@ namespace ucubot.Controllers
         [HttpGet]
         public IEnumerable<LessonSignalDto> ShowSignals()
         {
-            return _lessonSignalRepository.GetAll();
+            return _lessonSignalRepository.GetALL();
         }
 
         [HttpGet("{id}")]

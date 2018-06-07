@@ -11,7 +11,7 @@ namespace ucubot.newControllers
 {
     public interface ISignalRepository
     {
-        IEnumerable<StudentSignal> GetAll(MySqlConnection connection);
+        IEnumerable<StudentSignal> GetALL(MySqlConnection connection);
         
     }
 }

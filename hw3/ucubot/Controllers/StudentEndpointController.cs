@@ -16,10 +16,12 @@ namespace ucubot.Controllers
     [Route("api/[controller]")]
     public class StudentEndpointController : Controller
     {
+        private readonly IConfiguration _configuration;
         private readonly IStudentRepository _studentRepository;
 
-        public StudentEndpointController(IStudentRepository studentRepository)
+        public StudentEndpointController(IConfiguration configuration, IStudentRepository studentRepository)
         {
+            _configuration = configuration;
             _studentRepository = studentRepository;
         }
 

@@ -6,4 +6,4 @@ CREATE VIEW student_signals AS
        COUNT(lesson_signal.student_id) AS count
    FROM student 
     JOIN lesson_signal ON lesson_signal.student_id = student.id 
-    GROUP BY lesson_signal.SignalType, student.user_id;
+    GROUP BY lesson_signal.signal_type, student.user_id;

@@ -12968,11 +12968,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/arsen/Desktop/mybd/databases/hw3/ucubot/ucubot.csproj",
+      "projectUniqueName": "/home/arsen/Desktop/finalbd/hw3/ucubot/ucubot.csproj",
       "projectName": "ucubot",
-      "projectPath": "/home/arsen/Desktop/mybd/databases/hw3/ucubot/ucubot.csproj",
+      "projectPath": "/home/arsen/Desktop/finalbd/hw3/ucubot/ucubot.csproj",
       "packagesPath": "/home/arsen/.nuget/packages/",
-      "outputPath": "/home/arsen/Desktop/mybd/databases/hw3/ucubot/obj/",
+      "outputPath": "/home/arsen/Desktop/finalbd/hw3/ucubot/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/share/dotnet/sdk/NuGetFallbackFolder"

@@ -5,7 +5,7 @@ namespace ucubot.newControllers
 {
     public interface ILessonSignalRepository
     {
-        IEnumerable<LessonSignalDto> GetAll();
+        IEnumerable<LessonSignalDto> GetALL();
         LessonSignalDto GetbyId(long id);
         bool Create(SlackMessage message);
         bool Remove(long id);

@@ -20,7 +20,7 @@ namespace ucubot.newControllers
             _configuration = configuration;
         }
 
-        public IEnumerable<LessonSignalDto> GetAll()
+        public IEnumerable<LessonSignalDto> GetALL()
         {
             var connectionString = _configuration.GetConnectionString("BotDatabase");
             var connection = new MySqlConnection(connectionString);
@@ -42,8 +42,8 @@ namespace ucubot.newControllers
 
             connection.Open();
             var value = connection.Query<LessonSignalDto>(
-                "select lesson_signal.id as Id, lesson_signal.time_stamp as Timestamp, lesson_signal.signal_type as Type, student.user_id as UserId from lesson_signal join (student) on (lesson_signal.student_id = student.id) where lesson_signal.id=@id;",
-                new {id = id}).ToList();
+                "select lesson_signal.id as Id, lesson_signal.time_stamp as Timestamp, lesson_signal.signal_type as Type, student.user_id as UserId from lesson_signal join (student) on (lesson_signal.student_id = student.id) where lesson_signal.id=@myid;",
+                new {myid = id}).ToList();
             connection.Close();
             if (value.Count == 0)
             {
@@ -66,16 +66,15 @@ namespace ucubot.newControllers
 
             connection.Open();
             var value = connection.Query<Student>(
-                "select id as Id, first_name as FirstName, last_name as LastName, user_id as UserId from student where user_id=@uId",
-                new {uId = userId}).AsList();
-
-            connection.Execute("INSERT INTO lesson_signal (student_id, signal_type) VALUES (@std, @st)",
-                new {std = value[0].Id, st = signalType});
+                "select id as Id, first_name as FirstName, last_name as LastName, user_id as UserId from student where user_id=@myuser",
+                new {myuser = userId}).AsList();
             if (!value.Any())
             {    
-                connection.Close();
                 return false;
             }
+            connection.Execute("INSERT INTO lesson_signal (student_id, signal_type) VALUES (@mystudentid, @mysignaltype)",
+                new {mystudentid = value[0].Id, mysignaltype = signalType});
+            
 
             connection.Close();
             return true;
@@ -90,7 +89,7 @@ namespace ucubot.newControllers
             connection.Open();
             try
             {
-                connection.Execute("DELETE FROM lesson_signal WHERE id = @id;", new {id = id});
+                connection.Execute("DELETE FROM lesson_signal WHERE id = @myid;", new {myid = id});
             }
             catch (Exception e)
             {
