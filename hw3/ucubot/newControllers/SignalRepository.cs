@@ -24,14 +24,14 @@ namespace ucubot.newControllers
             _configuration = configuration;
             _connection = connection;
         }
-        public IEnumerable<StudentSignal> GetALL(MySqlConnection connection)
+        public IEnumerable<StudentSignal> GetALL()
         {
-            connection.Open();
-            var value = connection
+            _connection.Open();
+            var value = _connection
                 .Query<StudentSignal>(
                     "SELECT lesson_signal.Id Id, lesson_signal.Timestamp Timestamp, lesson_signal.SignalType Type, student.user_id UserId FROM lesson_signal LEFT JOIN student ON (lesson_signal.student_id = student.id);")
                 .ToList();
-            connection.Close();
+            _connection.Close();
             return value;
         }
         

@@ -22,7 +22,7 @@ namespace ucubot.Controllers
         public IEnumerable<StudentSignal> ShowSignals()
         {
             var conn = new MySqlConnection(_configuration.GetConnectionString("BotDatabase"));
-            return _signalRepository.GetALL(conn);
+            return _signalRepository.GetALL();
         }
     }
 }
