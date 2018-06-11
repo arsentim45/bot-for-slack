@@ -47,10 +47,12 @@ namespace ucubot.newControllers
             connection.Close();
             if (value.Count == 0)
             {
+                connection.Close();
                 return null;
             }
             else
             {
+                connection.Close();
                 return value[0];
             }
         }
@@ -70,6 +72,7 @@ namespace ucubot.newControllers
                 new {myuser = userId}).AsList();
             if (!value.Any())
             {    
+                connection.Close();
                 return false;
             }
             connection.Execute("INSERT INTO lesson_signal (student_id, signal_type) VALUES (@mystudentid, @mysignaltype)",
@@ -94,6 +97,7 @@ namespace ucubot.newControllers
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                connection.Close();
                 return false;
             }
 

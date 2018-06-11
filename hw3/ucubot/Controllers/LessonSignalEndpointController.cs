@@ -17,11 +17,11 @@ namespace ucubot.Controllers
     [Route("api/[controller]")]
     public class LessonSignalEndpointController : Controller
     {
-        private readonly ILessonSignalRepository _lessonSignalRepository;
+        private readonly LessonSignalRepository _lessonSignalRepository;
 
-        public LessonSignalEndpointController(ILessonSignalRepository lessonSignalRepository)
+        public LessonSignalEndpointController(IConfiguration configuration)
         {
-            _lessonSignalRepository = lessonSignalRepository;
+            _lessonSignalRepository = new LessonSignalRepository(configuration);
         }
 
         [HttpGet]

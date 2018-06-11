@@ -16,13 +16,13 @@ namespace ucubot.Controllers
     [Route("api/[controller]")]
     public class StudentEndpointController : Controller
     {
-        private readonly IConfiguration _configuration;
-        private readonly IStudentRepository _studentRepository;
+        //private readonly IConfiguration _configuration;
+        private readonly StudentRepository _studentRepository;
 
-        public StudentEndpointController(IConfiguration configuration, IStudentRepository studentRepository)
+        public StudentEndpointController(IConfiguration configuration)
         {
-            _configuration = configuration;
-            _studentRepository = studentRepository;
+            //_configuration = configuration;
+            _studentRepository = new StudentRepository(configuration);
         }
 
         [HttpGet]
@@ -41,13 +41,13 @@ namespace ucubot.Controllers
         public async Task<IActionResult> CreateStudent(Student student)
         {
             var value = _studentRepository.Create(student);
-            if (value == false)
+            if (value == true)
             {
-                return StatusCode(409);
+                return Accepted();
             }
             else
             {
-                return Accepted();
+                return StatusCode(409);
             }
             
             

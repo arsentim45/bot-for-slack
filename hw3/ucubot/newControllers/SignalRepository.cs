@@ -17,23 +17,23 @@ namespace ucubot.newControllers
     
     public class SignalRepository : ISignalRepository
     {
-        private readonly IConfiguration _configuration;
-        private MySqlConnection _connection;
-        public SignalRepository(IConfiguration configuration, MySqlConnection connection)
+        private readonly MySqlConnection connection;
+        public SignalRepository(IConfiguration configuration)
         {
-            _configuration = configuration;
-            _connection = connection;
+            connection = new MySqlConnection(configuration.GetConnectionString("BotDatabase"));
         }
+        
         public IEnumerable<StudentSignal> GetALL()
-        {
-            _connection.Open();
-            var value = _connection
+        {    
+            connection.Open();
+            var value = connection
                 .Query<StudentSignal>(
-                    "SELECT lesson_signal.Id Id, lesson_signal.Timestamp Timestamp, lesson_signal.SignalType Type, student.user_id UserId FROM lesson_signal LEFT JOIN student ON (lesson_signal.student_id = student.id);")
-                .ToList();
-            _connection.Close();
+                        "SELECT first_name as FirstName, last_name LastName, signal_type SignalType, count as Count FROM student_signals;")
+                .AsList();
+            connection.Close();
             return value;
         }
         
     }
+    
 }

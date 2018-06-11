@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/arsen/Desktop/finalbd/hw3/ucubot/ucubot.csproj",
+    "projectUniqueName": "/home/turiy/Desktop/hw3/ucubot/ucubot.csproj",
     "projectName": "ucubot",
-    "projectPath": "/home/arsen/Desktop/finalbd/hw3/ucubot/ucubot.csproj",
-    "outputPath": "/home/arsen/Desktop/finalbd/hw3/ucubot/obj/",
+    "projectPath": "/home/turiy/Desktop/hw3/ucubot/ucubot.csproj",
+    "outputPath": "/home/turiy/Desktop/hw3/ucubot/obj/",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "/usr/share/dotnet/sdk/NuGetFallbackFolder"
